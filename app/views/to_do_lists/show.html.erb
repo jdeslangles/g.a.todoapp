@@ -3,6 +3,13 @@
 <p>
   <b>Name:</b>
   <%= @to_do_list.name %>
+  <ul>
+    <% @to_do_list.to_do_items.each do |item| %>
+      <li id='item_<%=iem.id%>'>
+        <%= item.name %>
+      </li>
+      <%end%>
+    </ul>
 </p>
 
 

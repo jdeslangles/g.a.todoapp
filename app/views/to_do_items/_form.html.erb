@@ -19,6 +19,10 @@
     <%= f.label :position %><br />
     <%= f.number_field :position %>
   </div>
+  <div class="field">
+    <%= f.label :to_do_list_id, "List" %><br />
+    <%= f.select(:to_do_list_id, ToDoList.all.map{|l| [l.name, l.id]}) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,6 +1,6 @@
-<h1>Listing to_do_lists</h1>
+<h1>Listing ToDo Lists</h1>
 
-<table>
+<table class = "table">
   <tr>
     <th>Name</th>
     <th></th>
@@ -14,6 +14,15 @@
     <td><%= link_to 'Show', to_do_list %></td>
     <td><%= link_to 'Edit', edit_to_do_list_path(to_do_list) %></td>
     <td><%= link_to 'Destroy', to_do_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+       <ul>
+          <% to_do_list.to_do_items.each do |item| %>
+          <li id='item_<%=item.id%>'>
+              <%= item.name %>
+          </li>
+          <%end%>
+        </ul>
+    </td>
   </tr>
 <% end %>
 </table>
