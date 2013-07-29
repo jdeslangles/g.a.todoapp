@@ -10,20 +10,20 @@ $(function() {
       }
     });
 
-    var oldList, newList, item;
+    var old_list, new_list, item;
     $('.sortable').sortable({
         start: function(event, ui) {
             item = ui.item;
-            newList = oldList = ui.item.parent().parent();
+            new_list = old_list = ui.item.parent().parent();
         },
        stop: function(event, ui) {
         to_do_item_id = ui.item.data('to_do_item_id')
         position = ui.item.index();
         $.post('/to_do_items/'+ to_do_item_id +'/change_position', {'position': position});
-        $.post
+        $.post('to_do_items/' + to_do_item_id + 'change_list', {'new_list': new_list});
         },
         change: function(event, ui) {
-            if(ui.sender) newList = ui.placeholder.parent().parent();
+            if(ui.sender) new_list = ui.placeholder.parent().parent();
         },
         connectWith: ".sortable"
     }).disableSelection();
