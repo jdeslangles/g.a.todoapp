@@ -10,12 +10,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+<div class="span4 offset4">
+  <div class="todolist">
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

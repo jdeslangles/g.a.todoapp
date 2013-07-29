@@ -2,9 +2,14 @@
 <html>
 <head>
   <title>G.A.ToDoApp</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
   <div class="container">
@@ -12,14 +17,16 @@
       <nav class="navbar-inner">
         <ul class ="nav">
           <li class="active"><%= link_to("HOME", to_do_lists_path) %></li>
-          <li><%= link_to("Lists", to_do_lists_path) %></li>
-          <li><%= link_to("Items", to_do_items_path) %></li>
+          <li><%= link_to("Create a new list?", new_to_do_list_path) %></li>
+          <li><%= link_to("Add an item to a list?", new_to_do_item_path) %></li>
         </ul>
       </nav>
     </div>
+    <div class= "row">
 
-<%= yield %>
+      <%= yield %>
 
+    </div>
   </div>
 </body>
 </html>

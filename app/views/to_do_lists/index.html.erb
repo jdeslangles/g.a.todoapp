@@ -1,32 +1,28 @@
-<h1>Listing ToDo Lists</h1>
-
-<table class = "table">
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Lists:</h1>
+<br />
+<br />
 
 <% @to_do_lists.each do |to_do_list| %>
-  <tr>
-    <td><%= to_do_list.name %></td>
-    <td><%= link_to 'Show', to_do_list %></td>
-    <td><%= link_to 'Edit', edit_to_do_list_path(to_do_list) %></td>
-    <td><%= link_to 'Destroy', to_do_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class = "span3 offset1">
+  <div class = "todolist">
+    <h1><%= to_do_list.name %></h1>
     <td>
-       <ul>
+      <div id="list">
+       <ul class="list placeholder">
           <% to_do_list.to_do_items.each do |item| %>
-          <li id='item_<%=item.id%>'>
+          <li id="item_<%=item.id%>", class="ui-state-default">
               <%= item.name %>
           </li>
           <%end%>
         </ul>
+      </div>
     </td>
-  </tr>
+    <td><%= link_to 'Show', to_do_list %></td>
+    <td><%= link_to 'Edit', edit_to_do_list_path(to_do_list) %></td>
+    <td><%= link_to 'Destroy', to_do_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </div>
+</div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New To do list', new_to_do_list_path %>
+<br/>
+<br/>

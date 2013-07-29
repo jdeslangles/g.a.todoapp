@@ -1,14 +1,4 @@
 class ToDoItemsController < ApplicationController
-  # GET /to_do_items
-  # GET /to_do_items.json
-  def index
-    @to_do_items = ToDoItem.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @to_do_items }
-    end
-  end
 
   def move_in_list
     @to_do_item = ToDoItem.find(params[:id])
@@ -18,14 +8,27 @@ class ToDoItemsController < ApplicationController
     when 'down'
       @to_do_item.move_lower
     end
+
     redirect_to @to_do_item.to_do_list
   end
 
-  def update_position
+  def change_position
     @to_do_item = ToDoItem.find(params[:id])
     @to_do_item.insert_at((params[:position]).to_i + 1 )
+
     respond_to do |format|
       format.js { render nothing: true }
+    end
+  end
+
+  # GET /to_do_items
+  # GET /to_do_items.json
+  def index
+    @to_do_items = ToDoItem.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @to_do_items }
     end
   end
 
@@ -47,7 +50,7 @@ class ToDoItemsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @to_do_item }
+      format.json { render json: @to_do_list }
     end
   end
 

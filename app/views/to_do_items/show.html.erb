@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
+<br/>
+<br/>
+<div class = "span4 offset4">
+  <div class = "todolist">
+    <h1><%= @to_do_item.name %>:</b>
 
-<p>
-  <b>Name:</b>
-  <%= @to_do_item.name %>
-</p>
-
-<p>
-  <b>Position:</b>
-  <%= @to_do_item.position %>
-</p>
-
+      <p>
+        <b>Position:</b>
+        <%= @to_do_item.position %>
+      </p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_to_do_item_path(@to_do_item) %> |
 <%= link_to 'Back', to_do_items_path %>

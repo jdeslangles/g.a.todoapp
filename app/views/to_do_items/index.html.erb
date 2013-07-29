@@ -1,25 +1,19 @@
 <h1>Listing ToDo Items</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Position</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<br/>
+<br/>
 
 <% @to_do_items.each do |to_do_item| %>
-  <tr>
+<div class = "span3 offset1">
+  <div class = "todolist">
     <td><%= to_do_item.name %></td>
     <td><%= to_do_item.position %></td>
     <td><%= link_to 'Show', to_do_item %></td>
     <td><%= link_to 'Edit', edit_to_do_item_path(to_do_item) %></td>
     <td><%= link_to 'Destroy', to_do_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  </div>
+</div>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New To do item', new_to_do_item_path %>
+<!-- < %= link_to 'New To do item', new_to_do_item_path %> -->

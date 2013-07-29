@@ -1,17 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @to_do_list.name %>
-  <ul>
-    <% @to_do_list.to_do_items.each do |item| %>
-      <li id='item_<%=iem.id%>'>
-        <%= item.name %>
-      </li>
-      <%end%>
+<br />
+<br />
+<div class = "span4 offset4">
+  <div class = "todolist">
+    <h1><%= @to_do_list.name %>:</h1>
+    <ul class="sortable">
+      <% @to_do_list.to_do_items.each do |item| %>
+        <li id="item_<%= item.id %>"class="ui-state-default">
+          <%= item.name %>
+        </li>
+        <%end%>
     </ul>
-</p>
+    <%= link_to 'Edit', edit_to_do_list_path(@to_do_list) %> |
+    <%= link_to 'Back', to_do_lists_path %>
 
-
-<%= link_to 'Edit', edit_to_do_list_path(@to_do_list) %> |
-<%= link_to 'Back', to_do_lists_path %>
+  </div>
+</div>
