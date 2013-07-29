@@ -10,13 +10,11 @@ gem 'pg'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'ransack'
-gem 'nested_form'
-gem 'fog', "~>1.3.1"
+gem 'acts_as_list'
+gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
-gem 'acts_as_list'
-gem 'jquery-ui-rails'
 
 group :development do
   gem 'pry-rails'

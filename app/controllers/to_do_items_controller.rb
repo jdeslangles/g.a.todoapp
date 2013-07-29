@@ -11,14 +11,6 @@ class ToDoItemsController < ApplicationController
     redirect_to @to_do_item.to_do_list
   end
 
-  def change_position
-    @to_do_item = ToDoItem.find(params[:id])
-    @to_do_item.insert_at((params[:position]).to_i + 1 )
-    respond_to do |format|
-      format.js { render nothing: true }
-    end
-  end
-
   # GET /to_do_items
   # GET /to_do_items.json
   def index
