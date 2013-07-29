@@ -9,9 +9,9 @@
     <h1><%= to_do_list.name %></h1>
     <td>
       <div id="list">
-       <ul class="list placeholder">
+       <ul class="sortable">
           <% to_do_list.to_do_items.each do |item| %>
-          <li class="ui-state-default">
+          <li class="ui-state-default" id="item_<%=item.id%>" data-to_do_item_id="<%=item.id%>">
               <%= item.name %>
           </li>
           <%end%>

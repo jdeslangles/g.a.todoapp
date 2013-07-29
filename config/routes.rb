@@ -3,8 +3,8 @@ ToDoApp::Application.routes.draw do
 
   resources :to_do_items do
     member do
-      put 'move/:direction', to: 'todo_items#move_in_list', as: :move_in_list
-      post :change_position, to: 'to_do_items#change_position'
+      # put 'move/:direction', to: 'todo_items#move_in_list', as: :move_in_list
+      post '/change_position', to: 'to_do_items#change_position'
     end
   end
 
