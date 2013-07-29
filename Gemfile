@@ -15,6 +15,7 @@ gem 'jquery-ui-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'devise'
 
 group :development do
   gem 'pry-rails'

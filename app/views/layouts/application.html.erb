@@ -24,6 +24,16 @@
     </div>
     <div class= "row">
 
+<div>
+<% if current_user %>
+  <%= current_user.email %>
+  <%= link_to "log out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "log in", new_user_session_path %>
+  <%= link_to "register", new_user_registration_path %>
+<% end %>
+</div>
+
       <%= yield %>
 
     </div>

@@ -1,4 +1,6 @@
 class ToDoListsController < ApplicationController
+
+
   # GET /to_do_lists
   # GET /to_do_lists.json
   def index
