@@ -10,35 +10,7 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
 //= require jquery_ujs
 //= require_tree .
 
-
-$(function() {
-    $('.sortable').sortable();
-    $('.sortable').disableSelection();
-
-    $('#list li').draggable({
-      appendTo: "body",
-      revert: "invalid",
-      cursor: "move",
-      helper: "clone"
-    });
-
-    $('#list ul').droppable({
-      activeClass: "ui-state-default",
-      hoverClass:"ui-state-hover",
-      accept:":not(.ui-sortable-helper)",
-      drop:function(event,ui){
-        $(this).find(".placeholder").remove();
-        $("<li></li>").text(ui.draggable.text()).appendTo(this); }
-      }).sortable({
-        items:"li:not(.placeholder)",
-        sort:function(){
-          $( this).removeClass("ui-state-default");
-    })
-
-  })
-});
 
