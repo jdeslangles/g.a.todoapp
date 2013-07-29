@@ -6,7 +6,7 @@
     <h1><%= @to_do_list.name %>:</h1>
     <ul class="sortable">
       <% @to_do_list.to_do_items.each do |item| %>
-        <li id="item_<%= item.id %>"class="ui-state-default">
+        <li class="ui-state-default">
           <%= item.name %>
         </li>
         <%end%>

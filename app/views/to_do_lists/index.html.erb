@@ -10,7 +10,7 @@
       <div id="list">
        <ul class="list placeholder">
           <% to_do_list.to_do_items.each do |item| %>
-          <li id="item_<%=item.id%>", class="ui-state-default">
+          <li class="ui-state-default">
               <%= item.name %>
           </li>
           <%end%>
