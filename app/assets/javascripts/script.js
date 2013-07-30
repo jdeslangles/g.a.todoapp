@@ -14,22 +14,21 @@ $(function() {
     $('.sortable').sortable({
         start: function(event, ui) {
             item = ui.item;
-            new_list = old_list = ui.item.parent().parent();
         },
        stop: function(event, ui) {
         to_do_item_id = ui.item.data('to_do_item_id')
         position = ui.item.index();
+        new_list = ui.item.parent().parent().data('list_id');
+        $.post('/to_do_items/' + to_do_item_id + '/change_list', {'new_list': new_list});
         $.post('/to_do_items/'+ to_do_item_id +'/change_position', {'position': position});
-        $.post('to_do_items/' + to_do_item_id + 'change_list', {'new_list': new_list});
         },
         change: function(event, ui) {
             if(ui.sender) new_list = ui.placeholder.parent().parent();
         },
         connectWith: ".sortable"
     }).disableSelection();
+
 });
-
-
 // $('.sortable').disableSelection();
 
 //     $('#list li').draggable({

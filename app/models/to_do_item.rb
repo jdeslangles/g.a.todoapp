@@ -3,5 +3,5 @@ class ToDoItem < ActiveRecord::Base
   belongs_to :to_do_list
 
   default_scope order (:position)
-  acts_as_list
+  acts_as_list scope: :to_do_list
 end
